@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Bachelor courses</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+	<h1 style="margin-top:2rem">WELCOME THE THE TEST</h1>
+	<div>
+		<form action="@{/process_test}" method="post">
+			<div th:each="test: ${test}" style="margin-top:8rem">
+			<p th:text="${test.questionid}"></p>
+			<p th:text="${test.questionname}"></p>
+  			<input type="radio" id="html" th:name="${test.questionid}" th:value="${test.opt1}">
+  			<label for="html" th:text="${test.opt1}"></label><br>
+  			<input type="radio" id="css" name="${test.questionid}" value="${test.opt2}">
+  			<label for="css" th:text="${test.opt2}"></label><br>
+  			<input type="radio" id="javascript" name="${test.questionid}" value="${test.opt3}">
+  			<label for="javascript" th:text="${test.opt3}"></label><br/>
+			<input type="radio" id="javascript" name="${test.questionid}" value="${test.opt4}">
+  			<label for="javascript" th:text="${test.opt4}"></label>
+			<br/>
+			<a th:href="@{/showAnswer/{id}(id=${test.questionid})}" class="btn btn-primary">See Answer ></a>
+			</div>
+		</form>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Bachelor courses</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container text-center">
+	<h1 style="margin-top:2rem">ANSWER</h1>
+			<div th:each="test: ${test}" style="margin-top:8rem">
+			<p th:text="${test.questionid}"></p>
+			<p th:text="${test.questionname}"></p>
+  			<input type="radio" id="html" th:name="${test.questionid}" th:value="${test.opt1}">
+  			<label for="html" th:text="${test.opt1}"></label><br>
+  			<input type="radio" id="css" name="${test.questionid}" value="${test.opt2}">
+  			<label for="css" th:text="${test.opt2}"></label><br>
+  			<input type="radio" id="javascript" name="${test.questionid}" value="${test.opt3}">
+  			<label for="javascript" th:text="${test.opt3}"></label><br/>
+			<input type="radio" id="javascript" name="${test.questionid}" value="${test.opt4}">
+  			<label for="javascript" th:text="${test.opt4}"></label>
+			<br/>
+			<p>A.</p>
+			<h1 style="font-weight:bold" th:text="${test.answer}"></h1>
+			</div>
+	</div>
+</body>
+</html>

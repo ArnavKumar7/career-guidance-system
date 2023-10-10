@@ -2,18 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Authentication</title>
+	<title>Pass-out</title>
 	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container text-center">
-		<h1>Welcome to Career Guidance App</h1>
-		<h3><a th:href="@{/careers}">Careers</a></h3>
-		<h3><a th:href="@{/register}">Register</a></h3>
-		<h3><a th:href="@{/login}">Login</a></h3>
+		<div class="d-flex flex-column">
+			<h1>Have you qualified 10th or 12th?</h1>
+			
+			<button class="btn btn-primary m-4">
+			<h3>
+				<a th:href="@{/tenth}" class="noDecoration text-white">Tenth Pass</a>
+			<h3></button>
+			
+			
+			<h3><a th:href="@{/twelvth}">Twelvth Pass</a>
+			
+			</h3>
+		</div>
 	</div>
-	
+
 </body>
 </html>

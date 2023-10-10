@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Bachelor courses</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+	<div>
+		<form th:action="@{/logout}" method="post">
+			<p>
+				Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+			</p>
+			<input type="submit" value="Sign Out" />
+		</form>
+	</div>
+	<div>
+		<h1>List of all Resources</h1>
+	</div>
+	<div style="margin-top: 8rem" th:each="link: ${link}">
+		<iframe width="420" height="345" th:src="${link.links}">
+</iframe>
+		<div>
+	<a th:href="@{/giveTest/{id}(id=${link.courseid})}" class="btn btn-primary">Give Test</a>
+	</div>
+	</div> 
+	
+	</div>
+</body>
+</html>
